@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="fae97279-66f7-4aef-84d2-c68a87c02b0f" name="Changes" comment="update">
       <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
@@ -26,6 +27,24 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+=======
+    <list default="true" id="fae97279-66f7-4aef-84d2-c68a87c02b0f" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/RemoveItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/UpdateItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataWarehouse.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataWarehouse.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/UAP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/UAP/WarehouseSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/WarehouseSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/UAP/addItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/addItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/UAP/showAddItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/showAddItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/UAP/showInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/showInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/WarehouseSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/WarehouseSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/addItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/addItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/showAddItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/showAddItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory.class" afterDir="false" />
+>>>>>>> nabil
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,15 +54,28 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="daffa" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,6 +106,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Application.HelloApplication.executor": "Run",
+<<<<<<< HEAD
     "Application.WarehouseSystem.executor": "Run",
     "Maven.p [package].executor": "Run",
     "Maven.p [test].executor": "Run",
@@ -82,6 +115,17 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/hexor/OneDrive/Desktop/Kuliah/semester 3/UAP-DaffaxNabil",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+=======
+    "Application.JTableWithButton.executor": "Run",
+    "Application.WarehouseSystem.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "nabil",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/hexor/OneDrive/Desktop/Kuliah/semester 3/UAP-DaffaxNabil",
+    "settings.editor.selected.configurable": "preferences.keymap"
+>>>>>>> nabil
   }
 }]]></component>
   <component name="RunManager">
