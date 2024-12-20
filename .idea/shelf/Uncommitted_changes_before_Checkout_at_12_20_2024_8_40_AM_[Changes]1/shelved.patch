@@ -1,0 +1,358 @@
+Index: src/main/java/org/main/UAP/main.java
+===================================================================
+diff --git a/src/main/java/org/main/UAP/main.java b/src/main/java/org/main/UAP/main.java
+deleted file mode 100644
+--- a/src/main/java/org/main/UAP/main.java	
++++ /dev/null	
+@@ -1,5 +0,0 @@
+-package org.main.UAP;
+-
+-public class main {
+-
+-}
+Index: src/main/java/org/main/UAP/WarehouseSystem.java
+===================================================================
+diff --git a/src/main/java/org/main/UAP/WarehouseSystem.java b/src/main/java/org/main/UAP/WarehouseSystem.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/org/main/UAP/WarehouseSystem.java	
+@@ -0,0 +1,61 @@
++package org.main.UAP;
++
++import javax.swing.*;
++import java.awt.*;
++
++public class WarehouseSystem {
++
++    public static void main(String[] args) {
++
++        JFrame frame = new JFrame("Warehouse Management System");
++        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
++        frame.setSize(800, 600);
++
++        JPanel mainPanel = new JPanel();
++        mainPanel.setLayout(new BorderLayout());
++
++        JPanel topPanel = new JPanel();
++        topPanel.setLayout(new FlowLayout());
++
++        JButton btnUpdate= new JButton("Update Item");
++        JButton btnAddItem = new JButton("Add Item");
++        JButton btnRemoveItem = new JButton("Remove Item");
++        JButton btnReports = new JButton("Generate Reports");
++
++        topPanel.add(btnAddItem);
++        topPanel.add(btnUpdate);
++        topPanel.add(btnRemoveItem);
++        topPanel.add(btnReports);
++
++        mainPanel.add(topPanel, BorderLayout.NORTH);
++
++        showAddItem showAddItem = new showAddItem();
++        showInventory showInventory = new showInventory();
++
++        JPanel inventoryPanel = (JPanel) showInventory.showInventoryPanel(frame);
++        mainPanel.add(inventoryPanel, BorderLayout.CENTER);
++        frame.revalidate();
++        frame.repaint();
++
++
++        btnAddItem.addActionListener(e -> {
++            showAddItem.showAddItemDialog(frame);
++        });
++
++        // Action listener for removing an item (you need to implement the action)
++        btnRemoveItem.addActionListener(e -> {
++            // Show dialog for removing an item from the warehouse (to be implemented)
++            JOptionPane.showMessageDialog(frame, "Remove Item functionality is not implemented yet.");
++        });
++
++        // Action listener for generating reports (you need to implement the action)
++        btnReports.addActionListener(e -> {
++            // Show dialog for generating reports (to be implemented)
++            JOptionPane.showMessageDialog(frame, "Generate Reports functionality is not implemented yet.");
++        });
++
++        frame.add(mainPanel);
++        frame.setLocationRelativeTo(null);
++        frame.setVisible(true);
++    }
++}
+Index: dataWarehouse.csv
+===================================================================
+diff --git a/dataWarehouse.csv b/dataWarehouse.csv
+new file mode 100644
+--- /dev/null	
++++ b/dataWarehouse.csv	
+@@ -0,0 +1,1 @@
++aw,12,21.0
+Index: src/main/java/org/main/UAP/showInventory.java
+===================================================================
+diff --git a/src/main/java/org/main/UAP/showInventory.java b/src/main/java/org/main/UAP/showInventory.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/org/main/UAP/showInventory.java	
+@@ -0,0 +1,89 @@
++package org.main.UAP;
++
++import javax.swing.*;
++import javax.swing.table.DefaultTableModel;
++import java.awt.*;
++import java.io.BufferedReader;
++import java.io.File;
++import java.io.FileReader;
++import java.io.IOException;
++import java.nio.file.*;
++import java.util.Timer;
++import java.util.TimerTask;
++
++public class showInventory {
++
++    private long lastModifiedTime = 0; // Store the last modified time of the CSV file
++    private Timer timer;
++
++    public Component showInventoryPanel(JFrame frame) {
++        String filePath = "dataWarehouse.csv"; // Path to your inventory CSV file
++        DefaultTableModel tableModel = new DefaultTableModel();
++
++        // Add columns to the table model
++        tableModel.addColumn("Item Name");
++        tableModel.addColumn("Quantity");
++        tableModel.addColumn("Price");
++
++        JTable table = new JTable(tableModel);  // Initialize the JTable
++        JScrollPane scrollPane = new JScrollPane(table);  // Wrap JTable in JScrollPane
++
++        // Create a panel to hold the table and scrollpane
++        JPanel panel = new JPanel();
++        panel.setLayout(new BorderLayout());
++        panel.add(scrollPane, BorderLayout.CENTER);
++
++        // Clear any existing rows (in case the panel is reused)
++        tableModel.setRowCount(0);
++
++        // Read and load data from the CSV file
++        readDataFromCSV(filePath, tableModel);
++
++        // Set up a timer to check for file updates every 5 seconds
++        startFileWatcher(filePath, tableModel, frame);
++
++        return panel;
++    }
++
++    private void readDataFromCSV(String filePath, DefaultTableModel tableModel) {
++        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
++            String line;
++            while ((line = br.readLine()) != null) {
++                String[] data = line.split(",");
++                tableModel.addRow(data);
++            }
++        } catch (IOException e) {
++            JOptionPane.showMessageDialog(null, "Failed to load inventory data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
++        }
++    }
++
++    private void startFileWatcher(String filePath, DefaultTableModel tableModel, JFrame frame) {
++        Path path = Paths.get(filePath);
++        File file = new File(filePath);
++
++        // Start a timer to check the file modification timestamp every 5 seconds
++        if (timer == null) {
++            timer = new Timer();
++        }
++
++        // Timer task to check for file updates
++        timer.scheduleAtFixedRate(new TimerTask() {
++            @Override
++            public void run() {
++                long currentModifiedTime = file.lastModified();
++                if (currentModifiedTime > lastModifiedTime) {
++                    // File has been updated
++                    lastModifiedTime = currentModifiedTime;
++
++                    // Clear the previous table data and reload the CSV
++                    SwingUtilities.invokeLater(() -> {
++                        tableModel.setRowCount(0); // Clear the existing rows
++                        readDataFromCSV(filePath, tableModel); // Reload data
++                        frame.revalidate();
++                        frame.repaint();
++                    });
++                }
++            }
++        }, 0, 100); // Check every 5000 milliseconds (5 seconds)
++    }
++}
+Index: src/main/java/org/main/UAP/addItem.java
+===================================================================
+diff --git a/src/main/java/org/main/UAP/addItem.java b/src/main/java/org/main/UAP/addItem.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/org/main/UAP/addItem.java	
+@@ -0,0 +1,68 @@
++package org.main.UAP;
++
++import java.io.FileWriter;
++import java.io.IOException;
++
++public class addItem {
++    private String itemName;
++    private int quantity;
++    private double price;
++
++    public addItem(String itemName, int quantity, double price) {
++        this.itemName = itemName;
++        this.quantity = quantity;
++        this.price = price;
++    }
++
++
++    public String getItemName() {
++        return itemName;
++    }
++
++    public void setItemName(String itemName) {
++        this.itemName = itemName;
++    }
++
++    public int getQuantity() {
++        return quantity;
++    }
++
++    public void setQuantity(int quantity) {
++        if (quantity < 0) {
++            throw new IllegalArgumentException("Quantity cannot be negative.");
++        }
++        this.quantity = quantity;
++    }
++
++    public double getPrice() {
++        return price;
++    }
++
++    public void setPrice(double price) {
++        if (price < 0) {
++            throw new IllegalArgumentException("Price cannot be negative.");
++        }
++        this.price = price;
++    }
++
++
++    @Override
++    public String toString() {
++        return STR."Item Name: \{itemName}, Quantity: \{quantity}, Price: \{price}";
++    }
++
++    // Method to save item data to CSV
++    public void saveToCSV(String filePath) {
++        try (FileWriter writer = new FileWriter(filePath, true)) { // Append mode
++            writer.append(itemName)
++                    .append(',')
++                    .append(String.valueOf(quantity))
++                    .append(',')
++                    .append(String.valueOf(price))
++                    .append('\n');
++            System.out.println(STR."Data successfully saved to \{filePath}");
++        } catch (IOException e) {
++            System.err.println(STR."Error while saving to CSV: \{e.getMessage()}");
++        }
++    }
++}
+Index: src/main/java/org/main/UAP/showAddItem.java
+===================================================================
+diff --git a/src/main/java/org/main/UAP/showAddItem.java b/src/main/java/org/main/UAP/showAddItem.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/org/main/UAP/showAddItem.java	
+@@ -0,0 +1,92 @@
++package org.main.UAP;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++
++public class showAddItem {
++    public void showAddItemDialog(JFrame frame) {
++        JDialog dialog = new JDialog(frame, "Add Item", true);
++        dialog.setSize(300, 200);
++        dialog.setLayout(new BorderLayout());
++
++        JPanel inputPanel = new JPanel();
++        inputPanel.setLayout(new GridBagLayout());
++        GridBagConstraints gbc = new GridBagConstraints();
++        gbc.insets = new Insets(5, 5, 5, 5);
++        gbc.fill = GridBagConstraints.HORIZONTAL;
++
++        JLabel lblItemName = new JLabel("Item Name:");
++        JTextField txtItemName = new JTextField(15);
++
++        JLabel lblQuantity = new JLabel("Quantity:");
++        JTextField txtQuantity = new JTextField(15);
++
++        JLabel lblPrice = new JLabel("Price:");
++        JTextField txtPrice = new JTextField(15);
++
++        gbc.gridx = 0;
++        gbc.gridy = 0;
++        inputPanel.add(lblItemName, gbc);
++
++        gbc.gridx = 1;
++        inputPanel.add(txtItemName, gbc);
++
++        gbc.gridx = 0;
++        gbc.gridy = 1;
++        inputPanel.add(lblQuantity, gbc);
++
++        gbc.gridx = 1;
++        inputPanel.add(txtQuantity, gbc);
++
++        gbc.gridx = 0;
++        gbc.gridy = 2;
++        inputPanel.add(lblPrice, gbc);
++
++        gbc.gridx = 1;
++        inputPanel.add(txtPrice, gbc);
++
++        JPanel buttonPanel = new JPanel();
++        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
++
++        JButton btnSave = new JButton("Save");
++        JButton btnCancel = new JButton("Cancel");
++
++        btnSave.addActionListener(e -> {
++            String itemName = txtItemName.getText();
++            String quantityText = txtQuantity.getText();
++            String priceText = txtPrice.getText();
++
++
++            if (itemName.isEmpty() || quantityText.isEmpty() || priceText.isEmpty()) {
++                JOptionPane.showMessageDialog(dialog, "All fields are required!", "Error", JOptionPane.ERROR_MESSAGE);
++                return;
++            }
++
++            try {
++                int quantity = Integer.parseInt(quantityText);
++                double price = Double.parseDouble(priceText);
++                addItem addItem = new addItem(itemName,quantity,price);
++                addItem.saveToCSV("dataWarehouse.csv");
++
++                System.out.println(STR."Item saved: \{itemName}, Quantity: \{quantity}, Price: \{price}");
++                dialog.dispose();
++
++            } catch (NumberFormatException ex) {
++                JOptionPane.showMessageDialog(dialog, "Quantity and Price must be numeric!", "Error", JOptionPane.ERROR_MESSAGE);
++            }
++        });
++
++        btnCancel.addActionListener(e -> dialog.dispose());
++
++        buttonPanel.add(btnSave);
++        buttonPanel.add(btnCancel);
++
++        dialog.add(inputPanel, BorderLayout.CENTER);
++        dialog.add(buttonPanel, BorderLayout.SOUTH);
++
++        dialog.setLocationRelativeTo(frame);
++        dialog.setVisible(true);
++    }
++}
