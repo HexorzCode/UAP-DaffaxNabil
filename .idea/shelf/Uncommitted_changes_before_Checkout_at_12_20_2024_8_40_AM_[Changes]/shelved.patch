@@ -1,0 +1,17 @@
+Index: src/main/java/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module org.main.UAP {\r\n    requires javafx.controls;\r\n    requires javafx.fxml;\r\n\r\n\r\n    opens org.main.UAP to javafx.fxml;\r\n    exports org.main.UAP;\r\n}
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+--- a/src/main/java/module-info.java	
++++ b/src/main/java/module-info.java	
+@@ -1,6 +1,7 @@
+-module org.main.UAP {
++module org.main.moodul_ {
+     requires javafx.controls;
+     requires javafx.fxml;
++    requires java.desktop;
+ 
+ 
+     opens org.main.UAP to javafx.fxml;
