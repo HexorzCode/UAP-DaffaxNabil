@@ -23,8 +23,6 @@ public class WarehouseSystem {
         JButton btnReports = new JButton("Generate Reports");
 
         topPanel.add(btnAddItem);
-        topPanel.add(btnUpdate);
-        topPanel.add(btnRemoveItem);
         topPanel.add(btnReports);
 
         mainPanel.add(topPanel, BorderLayout.NORTH);

@@ -2,13 +2,12 @@ package org.main.UAP;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.File;
 
 public class showAddItem {
     public void showAddItemDialog(JFrame frame) {
         JDialog dialog = new JDialog(frame, "Add Item", true);
-        dialog.setSize(300, 200);
+        dialog.setSize(400, 300);
         dialog.setLayout(new BorderLayout());
 
         JPanel inputPanel = new JPanel();
@@ -25,6 +24,11 @@ public class showAddItem {
 
         JLabel lblPrice = new JLabel("Price:");
         JTextField txtPrice = new JTextField(15);
+
+        JLabel lblImage = new JLabel("Image:");
+        JTextField txtImage = new JTextField(15);
+        txtImage.setEditable(false);
+        JButton btnChooseImage = getjButton(dialog, txtImage);
 
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -47,6 +51,16 @@ public class showAddItem {
         gbc.gridx = 1;
         inputPanel.add(txtPrice, gbc);
 
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        inputPanel.add(lblImage, gbc);
+
+        gbc.gridx = 1;
+        inputPanel.add(txtImage, gbc);
+
+        gbc.gridx = 2;
+        inputPanel.add(btnChooseImage, gbc);
+
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
@@ -57,7 +71,7 @@ public class showAddItem {
             String itemName = txtItemName.getText();
             String quantityText = txtQuantity.getText();
             String priceText = txtPrice.getText();
-
+            String imagePath = txtImage.getText();
 
             if (itemName.isEmpty() || quantityText.isEmpty() || priceText.isEmpty()) {
                 JOptionPane.showMessageDialog(dialog, "All fields are required!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -67,10 +81,11 @@ public class showAddItem {
             try {
                 int quantity = Integer.parseInt(quantityText);
                 double price = Double.parseDouble(priceText);
-                addItem addItem = new addItem(itemName,quantity,price);
+
+                addItem addItem = new addItem(itemName, quantity, price, imagePath);
                 addItem.saveToCSV("dataWarehouse.csv");
 
-                System.out.println(STR."Item saved: \{itemName}, Quantity: \{quantity}, Price: \{price}");
+                System.out.println("Item saved: " + itemName + ", Quantity: " + quantity + ", Price: " + price + ", Image: " + imagePath);
                 dialog.dispose();
 
             } catch (NumberFormatException ex) {
@@ -88,5 +103,20 @@ public class showAddItem {
 
         dialog.setLocationRelativeTo(frame);
         dialog.setVisible(true);
+    }
+
+    private static JButton getjButton(JDialog dialog, JTextField txtImage) {
+        JButton btnChooseImage = new JButton("Choose Image");
+
+        btnChooseImage.addActionListener(e -> {
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            int returnValue = fileChooser.showOpenDialog(dialog);
+            if (returnValue == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+                txtImage.setText(selectedFile.getAbsolutePath());
+            }
+        });
+        return btnChooseImage;
     }
 }
