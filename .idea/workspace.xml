@@ -4,139 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="fae97279-66f7-4aef-84d2-c68a87c02b0f" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_20_2024_8_40_AM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_20_2024_8_40_AM_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_20_2024_8_40_AM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_20_2024_8_40_AM__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataWarehouse.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/WarehouseSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/addItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/showAddItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/showInventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/WarehouseSystem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/addItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/showAddItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-=======
-    <list default="true" id="fae97279-66f7-4aef-84d2-c68a87c02b0f" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/RemoveItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/UpdateItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="12d8e3be-ca61-45fa-a7c3-7f353206dd10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_20_2024_9_29_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_20_2024_9_29_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_21_2024_3_08_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_21_2024_3_08_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_21_2024_3_09_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_21_2024_3_09_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataWarehouse.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataWarehouse.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/UAP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/UAP/WarehouseSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/WarehouseSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/UAP/addItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/addItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/UAP/showAddItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/showAddItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/UAP/showInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/UAP/showInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/WarehouseSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/WarehouseSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/addItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/addItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/showAddItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/showAddItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory.class" afterDir="false" />
->>>>>>> nabil
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/RemoveItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/UpdateItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/WarehouseSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/addItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/showAddItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/main/UAP/showInventory.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="module-info" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="main" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="daffa" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
-}</component>
-  <component name="ProjectId" id="2qSR8Vl49ew8ziDGXbVsi0anTtS" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2qUqehbNrkuFr20Fl7sraWLXCLa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.HelloApplication.executor": "Run",
-<<<<<<< HEAD
-    "Application.WarehouseSystem.executor": "Run",
-    "Maven.p [package].executor": "Run",
-    "Maven.p [test].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hexor/OneDrive/Desktop/Kuliah/semester 3/UAP-DaffaxNabil",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
-=======
-    "Application.JTableWithButton.executor": "Run",
     "Application.WarehouseSystem.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "nabil",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hexor/OneDrive/Desktop/Kuliah/semester 3/UAP-DaffaxNabil",
-    "settings.editor.selected.configurable": "preferences.keymap"
->>>>>>> nabil
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
-      <module name="UAP" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="UAP" />
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,54 +69,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fae97279-66f7-4aef-84d2-c68a87c02b0f" name="Changes" comment="" />
-      <created>1734653832340</created>
+      <changelist id="12d8e3be-ca61-45fa-a7c3-7f353206dd10" name="Changes" comment="" />
+      <created>1734727599511</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1734653832340</updated>
+      <updated>1734727599511</updated>
     </task>
-    <task id="LOCAL-00001" summary="init">
-      <option name="closed" value="true" />
-      <created>1734653998365</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1734653998366</updated>
-    </task>
-    <task id="LOCAL-00002" summary="init">
-      <option name="closed" value="true" />
-      <created>1734654599989</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1734654599989</updated>
-    </task>
-    <task id="LOCAL-00003" summary="update">
-      <option name="closed" value="true" />
-      <created>1734661298218</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1734661298218</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="init" />
-    <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

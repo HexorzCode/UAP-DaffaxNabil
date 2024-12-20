@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 module org.main.UAP {
-    requires javafx.controls;
-    requires javafx.fxml;
-
-
-    opens org.main.UAP to javafx.fxml;
+    // Export your packages to make them accessible to other modules
     exports org.main.UAP;
-=======
-module org.main.module_ {
+
+    // Add a dependency on the java.desktop module for javax.swing
     requires java.desktop;
->>>>>>> daffa
 }
