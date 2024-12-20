@@ -42,15 +42,11 @@ public class WarehouseSystem {
             showAddItem.showAddItemDialog(frame);
         });
 
-        // Action listener for removing an item (you need to implement the action)
         btnRemoveItem.addActionListener(e -> {
-            // Show dialog for removing an item from the warehouse (to be implemented)
             JOptionPane.showMessageDialog(frame, "Remove Item functionality is not implemented yet.");
         });
 
-        // Action listener for generating reports (you need to implement the action)
         btnReports.addActionListener(e -> {
-            // Show dialog for generating reports (to be implemented)
             JOptionPane.showMessageDialog(frame, "Generate Reports functionality is not implemented yet.");
         });
 
